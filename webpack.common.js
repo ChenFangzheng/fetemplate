@@ -6,13 +6,18 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: {
         app: './src/pages/index.ts',
+        other: './src/pages/index1.ts'
     },
     plugins: [
         // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'Development',
+            title: 'index',
             template: path.resolve(__dirname, 'src/pages/index.html')
+        }),
+        new HtmlWebpackPlugin({
+            title: 'other',
+            template: path.resolve(__dirname, 'src/pages/index1.html')
         })
     ],
     output: {
